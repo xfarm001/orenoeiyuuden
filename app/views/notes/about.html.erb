@@ -1,0 +1,69 @@
+* このサイトについて<br>
+<br>
+プログラミング初心者によるデビュー作となります。<br>
+フレームワーク Ruby on Rails を用いて一生懸命ググりながら作成しました。<br>
+<br>
+マビノギ英雄伝の取引掲示板はリアルタイムに描写されていないため、Web上から常に最新の情報を得るためにはF5連打するしか方法がありません。<br>
+そこで、わざわざF5を押さずにリアルタイムに最新の情報得ることはできないか？と考えこのサイトを作成しました。<br>
+<br>
+（β）版なので機能はまだまだ乏しく、改善の余地がたくさんあります。<br>
+<br>
+【ちょっとした問題点】<br>
+・既存記事の削除に未対応<br>
+・既存記事の内容変更後も旧記事が存在してしまう<br>
+・最下部によくわからないデータが1件入ってしまう<br>
+
+<br>
+【付加価値】<br>
+・題名にES（エンチャントスクロール）が付いていればESの画像を0ページ目に表示させて、見た人にわかりやすいインターフェースの実装<br>
+・題名にSS（スクリーンショット）が付いていればSSの画像を0ページ目に表示させて、見た人にわかりやすいインターフェースの実装<br>
+・ページネーションが未実装<br>
+・買います、売ります、その他、終了のソート機能<br>
+
+<!-- リアルタイム -->
+<!--
+<script>
+window.onload = function() {
+  console.log('onload 1');
+  setInterval("myfunc()",1000);
+}
+
+function myfunc(){
+      $("#result").html("");
+}
+</script>
+-->
+
+<!--
+<script>
+window.onload = function() {
+  console.log('onload');
+  setTimeout(myfunc,0);
+}
+
+function myfunc() {
+  var isLoaded = false;
+  if (isLoaded !== false) {
+      window.location.reload(true);
+      isLoaded = true;
+  }
+}
+</script>
+-->
+
+<!--
+<script>
+window.onload = function() {
+  console.log('onload 2');
+  var query = window.location.search.substring(1);
+  if( query.length == 0 ){
+    setTimeout("myfunc()",0);
+  }
+}
+function myfunc() {
+//  window.location.reload(true);
+  window.location = window.location + "?0";
+}
+
+</script>
+-->

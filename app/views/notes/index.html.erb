@@ -1,0 +1,45 @@
+<!--
+<% @notes.each do |note| %>
+<%= link_to note.title,note.link %>
+<br>
+<% end %>
+-->
+
+
+<!-- リアルタイム -->
+<script>
+window.onload = function() {
+  console.log('onload 1');
+  setInterval("myfunc()",1000);
+}
+
+function myfunc(){
+  $.ajax({
+    type: "POST",
+    data: {
+      "page": 2
+    },
+    <!-- url: "http://192.168.124.11/src/ajax.php", -->
+    url: "http://e-sports.tokyo/src/ajax.php",
+    success: function(j_data){
+    // 処理を記述
+      $("#result").html(j_data);
+    }
+  });
+}
+</script>
+
+<!-- NINJA ANALYZE -->
+<script type="text/javascript">
+//<![CDATA[
+(function(d) {
+  var sc=d.createElement("script"),
+      ins=d.getElementsByTagName("script")[0];
+  sc.type="text/javascript";
+  sc.src=("https:"==d.location.protocol?"https://":"http://") + "code.analysis.shinobi.jp" + "/ninja_ar/NewScript?id=00376045&hash=9dbc3833&zone=36";
+  sc.async=true;
+  ins.parentNode.insertBefore(sc, ins);
+})(document);
+//]]>
+</script>
+<!-- /NINJA ANALYZE -->

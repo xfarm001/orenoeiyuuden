@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>オレ流 マビノギ英雄伝 取引掲示板 (β)</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body class="<%= controller_name %> <%= action_name %>">
+<header class="navbar">
+  <div class="container">
+    <div id="logo"><%= link_to "オレ流 マビノギ英雄伝 取引掲示板 (β)",notes_index_path %></div>
+   <!-- <ul class="header-right">
+      <li><%= link_to "Top",notes_index_path %></li>
+      <li><%= link_to "About",notes_about_path %></li>
+    </ul>
+   -->
+    <div id="sugi">
+      <%= link_to "about",notes_about_path %>
+    </div>
+  </div>
+</header>
+
+<%= yield %>
+
+<div id="result"></div>
+
+</body>
+</html>
